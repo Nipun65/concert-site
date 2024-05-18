@@ -1,19 +1,11 @@
-import austin from "./../../public/austin.jpg";
-import gutarist from "./../../public/gutarist.jpg";
-import pianist from "./../../public/pianist.jpg";
-
-import billie from "./../../public/billie.jpg";
-import coldplay from "./../../public/coldplay.jpg";
-import postmalone from "./../../public/postmalone.jpg";
-import tracks from "./../../public/tracks.jpg";
-import japaneselady from "./../../public/japaneselady.png";
-import artist from "./../../public/artist.jpg";
-import coke from "./../../public/coke.jpg";
-import kanye from "./../../public/kanye.jpg";
-import singer from "./../../public/singer.jpg";
-import tameimpala from "./../../public/tameimpala.webp";
-import olivia from "./../../public/olivia-rodrigo.webp";
-import japanesebreakfast from "./../../public/japanesebreakfast.jpg";
+import postmalone from "@/public/postmalone.jpg";
+import japaneselady from "@/public/japaneselady.png";
+import artist from "@/public/artist.jpg";
+import kanye from "@/public/kanye.jpg";
+import singer from "@/public/singer.jpg";
+import tameimpala from "@/public/tameimpala.webp";
+import olivia from "@/public/olivia-rodrigo.webp";
+import japanesebreakfast from "@/public/japanesebreakfast.jpg";
 
 const EVENTDETAILS = {
   title: "Explore Your First Collectible",
@@ -32,28 +24,42 @@ const CAROUSELIMAGES = [
     image: japaneselady,
     venue: "Tokyo, Japan",
     eventName: "Cultural Festival",
+    id: 1,
   },
   {
     image: artist,
     venue: "New York, USA",
     eventName: "Art Exhibition",
+    id: 2,
   },
   {
     image: singer,
     venue: "Los Angeles, USA",
     eventName: "Music Concert",
+    id: 3,
   },
   {
     image: postmalone,
     venue: "Las Vegas, USA",
     eventName: "Album Launch",
+    id: 4,
   },
   {
     image: kanye,
     venue: "Chicago, USA",
     eventName: "Music Festival",
+    id: 5,
   },
 ];
 
-const TABS = ["Events", "Collections"];
+const TABS = [
+  {
+    name: "Events",
+    id: 1,
+  },
+  {
+    name: "Collections",
+    id: 2,
+  },
+];
 export { EVENTDETAILS, CAROUSELIMAGES, TABS };

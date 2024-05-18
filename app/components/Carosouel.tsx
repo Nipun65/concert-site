@@ -1,18 +1,24 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import venue from "./../../public/venue.svg";
+import venue from "@/public/venue.svg";
+
+type CarouselImage = {
+  image: StaticImageData;
+  venue: string;
+  eventName: string;
+  id: number;
+};
 
 interface CarouselProps {
-  data: any;
+  data: CarouselImage[];
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const carouselRef = useRef<HTMLDivElement | null>(null);
-  console.log(carouselRef);
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,7 +29,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
     }, 400);
 
     const timeoutVar = setTimeout(() => {
-      setActiveIndex((preveIndex) => {
+      setActiveIndex(() => {
         const newIndex = activeIndex === data.length - 1 ? 0 : activeIndex + 1;
         if (carouselRef.current) {
           if (activeIndex === data.length - 1) {
@@ -44,29 +50,31 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
   return (
     <div
       className="transition-all duration-500
-         flex gap-4"
+         flex xs:gap-2 sm:gap-3 lg:gap-4"
       style={{ transform: `translateX(${translateX}%)` }}
       ref={carouselRef}
     >
-      {data.map((item: any, index: number) => {
+      {data.map((item: CarouselImage, index: number) => {
         return (
           <div
-            className={`h-[30rem] w-80 ${
+            className={`xs:h-[20rem] xs:w-52 md:h-[24rem] md:w-56 lg:h-[30rem] lg:w-80 ${
               index === activeIndex ? "" : "brightness-75"
             } relative group cursor-pointer`}
+            key={item?.id}
           >
             <Image src={item.image} className="h-full w-full" alt="item" />
-
             {
               <div
-                className={`text-white flex flex-col transition-all duration-75 gap-4 absolute bottom-6 ${
+                className={`text-white flex flex-col transition-all mx-4 duration-75 gap-4 absolute bottom-6 font-semibold ${
                   activeIndex !== index
                     ? "visible"
                     : "invisible group-hover:visible"
                 }`}
               >
-                <div className="text-3xl tracking-wider">{item?.eventName}</div>
-                <div className="flex gap-2 items-center font-bold">
+                <div className="xs:text-lg md:text-xl lg:text-3xl tracking-wider ">
+                  {item?.eventName}
+                </div>
+                <div className="flex gap-2 items-center font-semibold xs:text-sm md:text-base">
                   <Image src={venue} alt="venue" className="h-4 w-4" />
                   {item?.venue}
                 </div>

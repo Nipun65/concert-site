@@ -6,11 +6,11 @@ const Maincontent = () => {
   return (
     <>
       <div className="w-full relative h-full">
-        <div className="w-[45%] z-0 absolute">
-          <div className="font-bold text-[10rem] text-[#444649] w-full break-all leading-[10rem]">
+        <div className="w-[45%] z-0 absolute xs:text-6xl sm:text-[4rem] md:text-[7rem] lg:text-[10rem] lg:leading-[10rem]">
+          <div className="font-bold  text-[#444649] w-full break-all">
             ASTRIX
           </div>
-          <div className="font-bold text-[10rem] text-[#444649] w-full break-all mt-12 leading-[10rem]">
+          <div className="font-bold text-[#444649] w-full break-all mt-12">
             EVENTS
           </div>
         </div>

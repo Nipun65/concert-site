@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "0px",
+      },
       animation: {
         marquee: "marquee 10s linear infinite",
       },

@@ -1,10 +1,10 @@
 import { constants } from "./utils";
+import Image from "next/image";
 import Logo from "./components/Logo";
 import EventDetails from "./components/EventDetails";
 import Maincontent from "./components/MainContent";
 import Marquee from "./components/Marquee";
-import astrix from "./../public/astrix.svg";
-import Image from "next/image";
+import astrix from "@/public/astrix.svg";
 
 export default function Home() {
   return (
@@ -21,7 +21,11 @@ export default function Home() {
             Collection Live: Meta Lives
             <span className="whitespace-nowrap tracking-wider flex gap-3 items-center delay-[30s]">
               Event: Oasis Bus tour, JLN Stadium, Delhi
-              <Image src={astrix} alt="astrix logo" className="h-6 w-6" />
+              <Image
+                src={astrix}
+                alt="astrix logo"
+                className="xs:size-3 md:size-4 lg:size-6"
+              />
               Collection Live: Meta Lives
             </span>
           </span>
