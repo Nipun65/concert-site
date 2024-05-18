@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex bg-[#16191D] flex-col">
       <div className="flex">
-        <div className="w-[60%] h-screen overflow-auto hide-scrollbar">
+        <div className="w-[60%] h-screen overflow-auto overflow-x-hidden hide-scrollbar">
           <Logo />
           <Maincontent />
         </div>

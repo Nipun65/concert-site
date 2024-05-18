@@ -11,6 +11,9 @@ import artist from "./../../public/artist.jpg";
 import coke from "./../../public/coke.jpg";
 import kanye from "./../../public/kanye.jpg";
 import singer from "./../../public/singer.jpg";
+import tameimpala from "./../../public/tameimpala.webp";
+import olivia from "./../../public/olivia-rodrigo.webp";
+import japanesebreakfast from "./../../public/japanesebreakfast.jpg";
 
 const EVENTDETAILS = {
   title: "Explore Your First Collectible",
@@ -21,7 +24,7 @@ const EVENTDETAILS = {
   description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud.`,
-  lineup: [austin, gutarist, pianist],
+  lineup: [olivia, tameimpala, japanesebreakfast],
 };
 
 const CAROUSELIMAGES = [
@@ -52,4 +55,5 @@ const CAROUSELIMAGES = [
   },
 ];
 
-export { EVENTDETAILS, CAROUSELIMAGES };
+const TABS = ["Events", "Collections"];
+export { EVENTDETAILS, CAROUSELIMAGES, TABS };

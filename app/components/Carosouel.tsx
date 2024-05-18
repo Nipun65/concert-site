@@ -11,7 +11,7 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [translateX, setTranslateX] = useState(0);
-  const carouselRef = useRef(null);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
   console.log(carouselRef);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
       {data.map((item: any, index: number) => {
         return (
           <div
-            className={`h-[28rem] w-80 ${
+            className={`h-[30rem] w-80 ${
               index === activeIndex ? "" : "brightness-75"
             } relative group cursor-pointer`}
           >
