@@ -1,6 +1,7 @@
 interface MarqueeProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
+
 const Marquee: React.FC<MarqueeProps> = ({ children }) => {
   return (
     <div className="md:w-[5%] text-[#16191D] bg-[#B9A0FF] xs:h-fit md:h-screen overflow-hidden">
@@ -10,6 +11,6 @@ const Marquee: React.FC<MarqueeProps> = ({ children }) => {
         </div>
       </div>
     </div>
-  );
-};
-export default Marquee;
+  )
+}
+export default Marquee

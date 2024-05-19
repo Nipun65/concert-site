@@ -1,11 +1,10 @@
-import { constants } from "./utils";
-import Image from "next/image";
-import Logo from "./components/Logo";
-import EventDetails, { WaitList } from "./components/EventDetails";
-import Maincontent from "./components/MainContent";
-import Marquee from "./components/Marquee";
-import astrisk from "@/public/astriskblacklogo.png";
-import astrix from "@/public/astrix.png";
+import Image from 'next/image'
+import { constants } from './utils'
+import EventDetails, { WaitList } from './components/EventDetails'
+import Logo from './components/Logo'
+import Maincontent from './components/MainContent'
+import Marquee from './components/Marquee'
+import astrisk from '@/public/astriskblacklogo.png'
 
 export default function Home() {
   return (
@@ -33,9 +32,8 @@ export default function Home() {
           />
           Collection Live: Meta Lives
         </Marquee>
-
         <EventDetails data={constants.EVENTDETAILS} />
       </div>
     </main>
-  );
+  )
 }

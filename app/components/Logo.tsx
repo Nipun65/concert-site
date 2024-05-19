@@ -1,5 +1,5 @@
-import Image from "next/image";
-import astrisk from "@/public/astrisklogo.png";
+import Image from 'next/image'
+import astrisk from '@/public/astrisklogo.png'
 
 const Logo = () => {
   return (
@@ -11,6 +11,6 @@ const Logo = () => {
       />
       Astrix.
     </div>
-  );
-};
-export default Logo;
+  )
+}
+export default Logo

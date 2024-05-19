@@ -1,24 +1,24 @@
-"use client";
-import Image, { StaticImageData } from "next/image";
-import { constants } from "../utils";
-import Lineup from "./Lineup";
-import Button from "./Button";
-import venue from "@/public/venue.svg";
-import cloak from "@/public/clock.svg";
-import qrcode from "@/public/qrcode.svg";
+'use client'
+import Image, { StaticImageData } from 'next/image'
+import { constants } from '../utils'
+import Lineup from './Lineup'
+import Button from './Button'
+import venue from '@/public/venue.svg'
+import cloak from '@/public/clock.svg'
+import qrcode from '@/public/qrcode.svg'
 
 interface EventDetails {
-  title: string;
-  name: string;
-  venue: string;
-  date: string;
-  time: string;
-  description: string;
-  lineup: StaticImageData[];
+  title: string
+  name: string
+  venue: string
+  date: string
+  time: string
+  description: string
+  lineup: StaticImageData[]
 }
 
 interface EventDetailsProps {
-  data: EventDetails;
+  data: EventDetails
 }
 
 export const WaitList = () => {
@@ -29,8 +29,8 @@ export const WaitList = () => {
     >
       Join WaitList
     </Button>
-  );
-};
+  )
+}
 
 export const QrCode = () => {
   return (
@@ -41,8 +41,8 @@ export const QrCode = () => {
         className="xs:size-10 md:size-12 lg:size-16"
       />
     </div>
-  );
-};
+  )
+}
 
 const EventDetails: React.FC<EventDetailsProps> = ({ data }) => {
   return (
@@ -85,11 +85,13 @@ const EventDetails: React.FC<EventDetailsProps> = ({ data }) => {
           <Lineup data={constants?.EVENTDETAILS?.lineup} />
         </div>
       </div>
-      <div className="md:flex justify-between items-end md:mt-auto mt-5 xs:hidden">
-        <QrCode />
-        <WaitList />
+      <div className="md:mt-auto">
+        <div className="md:flex justify-between items-end mt-4 xs:hidden">
+          <QrCode />
+          <WaitList />
+        </div>
       </div>
     </div>
-  );
-};
-export default EventDetails;
+  )
+}
+export default EventDetails

@@ -1,8 +1,8 @@
-import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React from 'react'
+import Image, { StaticImageData } from 'next/image'
 
 interface LineupProps {
-  data: StaticImageData[];
+  data: StaticImageData[]
 }
 const Lineup: React.FC<LineupProps> = ({ data }) => {
   return (
@@ -16,16 +16,16 @@ const Lineup: React.FC<LineupProps> = ({ data }) => {
             <Image
               src={item}
               className={`rounded-md xs:size-28 md:size-32 lg:size-36 ${
-                index === 1 ? "lg:scale-110" : ""
+                index === 1 ? 'lg:scale-110' : ''
               }`}
               alt="lineup"
               key={index}
             />
-          );
+          )
         })}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Lineup;
+export default Lineup

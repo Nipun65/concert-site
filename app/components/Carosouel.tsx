@@ -1,51 +1,52 @@
-"use client";
-
-import Image, { StaticImageData } from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import venue from "@/public/venue.svg";
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
+import Image, { StaticImageData } from 'next/image'
+import venue from '@/public/venue.svg'
 
 type CarouselImage = {
-  image: StaticImageData;
-  venue: string;
-  eventName: string;
-  id: number;
-};
+  image: StaticImageData
+  venue: string
+  eventName: string
+  id: number
+}
 
 interface CarouselProps {
-  data: CarouselImage[];
+  data: CarouselImage[]
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
-  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [translateX, setTranslateX] = useState(0)
+  const carouselRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     setTimeout(() => {
+      // to remove opacity-50 class once active index is set to first image
       if (carouselRef.current && activeIndex === 0) {
-        carouselRef.current.classList.remove("opacity-50");
-        carouselRef.current.classList.add("opacity-100");
+        carouselRef.current.classList.remove('opacity-50')
+        carouselRef.current.classList.add('opacity-100')
       }
-    }, 400);
+    }, 400)
 
     const timeoutVar = setTimeout(() => {
       setActiveIndex(() => {
-        const newIndex = activeIndex === data.length - 1 ? 0 : activeIndex + 1;
+        const newIndex = activeIndex === data.length - 1 ? 0 : activeIndex + 1
+        // to handle opacity when active index goes from last to first
         if (carouselRef.current) {
           if (activeIndex === data.length - 1) {
-            carouselRef.current.classList.remove("opacity-100");
-            carouselRef.current.classList.add("opacity-50");
+            carouselRef.current.classList.remove('opacity-100')
+            carouselRef.current.classList.add('opacity-50')
           } else {
-            carouselRef.current.classList.remove("opacity-50");
-            carouselRef.current.classList.add("opacity-100");
+            carouselRef.current.classList.remove('opacity-50')
+            carouselRef.current.classList.add('opacity-100')
           }
         }
-        setTranslateX(-newIndex * 20);
-        return newIndex;
-      });
-    }, 2000);
-    () => clearTimeout(timeoutVar);
-  }, [activeIndex]);
+        setTranslateX(-newIndex * 20)
+        return newIndex
+      })
+    }, 2000)
+    ;() => clearTimeout(timeoutVar)
+  }, [activeIndex])
 
   return (
     <div
@@ -58,7 +59,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
         return (
           <div
             className={`xs:h-80 xs:w-52 md:h-[24rem] md:w-56 lg:h-[30rem] lg:w-80 ${
-              index === activeIndex ? "" : "brightness-75"
+              index === activeIndex ? '' : 'brightness-75'
             } relative group cursor-pointer`}
             key={item?.id}
           >
@@ -67,8 +68,8 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
               <div
                 className={`text-white flex flex-col transition-all mx-4 duration-75 gap-4 absolute bottom-6 font-semibold ${
                   activeIndex !== index
-                    ? "visible"
-                    : "invisible group-hover:visible"
+                    ? 'visible'
+                    : 'invisible group-hover:visible'
                 }`}
               >
                 <div className="xs:text-lg md:text-xl lg:text-3xl tracking-wider ">
@@ -81,10 +82,10 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
               </div>
             }
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Carousel;
+export default Carousel
