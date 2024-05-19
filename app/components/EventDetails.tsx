@@ -46,7 +46,7 @@ export const QrCode = () => {
 
 const EventDetails: React.FC<EventDetailsProps> = ({ data }) => {
   return (
-    <div className="flex flex-col text-white md:w-[34%] p-6 xs:h-fit md:h-screen overflow-auto">
+    <div className="flex flex-col text-white md:w-[35%] p-6 xs:h-fit md:h-screen overflow-auto">
       <div className="md:flex-grow">
         <div className="font-bold xs:text-xl md:text-2xl lg:text-3xl tracking-wider w-[60%]">
           {data?.title}
