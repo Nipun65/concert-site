@@ -14,7 +14,7 @@ export default function Home() {
         <WaitList />
       </div>
       <div className="flex md:flex-row xs:flex-col-reverse">
-        <div className="xs:w-full md:w-[60%] xs:h-96 md:h-screen xs:overscroll-none overflow-x-hidden hide-scrollbar">
+        <div className="xs:w-full md:w-[60%] xs:h-96 md:min-h-screen overflow-x-hidden hide-scrollbar">
           <div
             className="xs:hidden 
           md:block py-6 px-4"

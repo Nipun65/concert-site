@@ -18,6 +18,9 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [translateX, setTranslateX] = useState(0)
   const carouselRef = useRef<HTMLDivElement | null>(null)
+  let translateVar: number
+  if (typeof window !== 'undefined')
+    translateVar = window?.innerWidth >= 768 ? 20 : 23
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,7 +44,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
             carouselRef.current.classList.add('opacity-100')
           }
         }
-        setTranslateX(-newIndex * 20)
+        setTranslateX(-newIndex * translateVar)
         return newIndex
       })
     }, 2000)
