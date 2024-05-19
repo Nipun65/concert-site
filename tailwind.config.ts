@@ -12,18 +12,18 @@ const config: Config = {
         xs: "0px",
       },
       animation: {
-        marquee: "marquee 10s linear infinite",
+        "horizontal-marquee": "marquee-horizontal 10s linear infinite",
+        "vertical-marquee": "marquee 10s linear infinite",
       },
       keyframes: {
+        "marquee-horizontal": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-150%)" },
+        },
         marquee: {
           "0%": { transform: "translateY(100%)" },
-          "100%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(-100%)" },
         },
-      },
-      delay: {
-        0: "0s",
-        "[30s]": "30s",
-        "[60s]": "60s",
       },
     },
   },

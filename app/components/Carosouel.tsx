@@ -57,7 +57,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
       {data.map((item: CarouselImage, index: number) => {
         return (
           <div
-            className={`xs:h-[20rem] xs:w-52 md:h-[24rem] md:w-56 lg:h-[30rem] lg:w-80 ${
+            className={`xs:h-80 xs:w-52 md:h-[24rem] md:w-56 lg:h-[30rem] lg:w-80 ${
               index === activeIndex ? "" : "brightness-75"
             } relative group cursor-pointer`}
             key={item?.id}

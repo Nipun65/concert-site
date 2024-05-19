@@ -5,20 +5,26 @@ import Tabs from "./Tabs";
 const Maincontent = () => {
   return (
     <>
-      <div className="w-full relative h-full">
+      <div className="xs:block md:hidden flex w-full justify-end items-end">
+        <Tabs data={constants.TABS} />
+      </div>
+      <div className="relative w-full h-full overflow-x-hidden">
         <div className="w-[45%] z-0 absolute xs:text-6xl sm:text-[4rem] md:text-[7rem] lg:text-[10rem] lg:leading-[10rem]">
-          <div className="font-bold  text-[#444649] w-full break-all">
+          <div className="font-bold text-[#444649] w-full break-all">
             ASTRIX
           </div>
           <div className="font-bold text-[#444649] w-full break-all mt-12">
             EVENTS
           </div>
         </div>
-        <div className="z-20 absolute bottom-16 left-[10rem]">
+
+        <div className="z-20 absolute xs:top-4 md:top-auto md:bottom-16 left-[10rem]">
           <Carousel data={constants.CAROUSELIMAGES} />
         </div>
       </div>
-      <Tabs data={constants.TABS} />
+      <div className="xs:hidden md:block">
+        <Tabs data={constants.TABS} />
+      </div>
     </>
   );
 };

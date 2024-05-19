@@ -34,20 +34,20 @@ const CAROUSELIMAGES = [
   },
   {
     image: singer,
-    venue: "Los Angeles, USA",
-    eventName: "Music Concert",
+    venue: "Las Vegas, USA",
+    eventName: "Album Launch",
     id: 3,
   },
   {
     image: postmalone,
-    venue: "Las Vegas, USA",
-    eventName: "Album Launch",
+    venue: "Los Angeles, USA",
+    eventName: "Twelve Carat Tour",
     id: 4,
   },
   {
     image: kanye,
     venue: "Chicago, USA",
-    eventName: "Music Festival",
+    eventName: "Coachella Festival",
     id: 5,
   },
 ];

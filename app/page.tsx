@@ -1,34 +1,37 @@
 import { constants } from "./utils";
 import Image from "next/image";
 import Logo from "./components/Logo";
-import EventDetails from "./components/EventDetails";
+import EventDetails, { WaitList } from "./components/EventDetails";
 import Maincontent from "./components/MainContent";
 import Marquee from "./components/Marquee";
-import astrix from "@/public/astrix.svg";
+import astrisk from "@/public/astriskblacklogo.png";
+import astrix from "@/public/astrix.png";
 
 export default function Home() {
   return (
     <main className="flex bg-[#16191D] flex-col">
-      <div className="flex">
-        <div className="w-[60%] h-screen overflow-auto overflow-x-hidden hide-scrollbar">
-          <Logo />
+      <div className="md:hidden xs:flex justify-between items-center py-6 px-4">
+        <Logo />
+        <WaitList />
+      </div>
+      <div className="flex md:flex-row xs:flex-col-reverse">
+        <div className="xs:w-full md:w-[60%] xs:h-96 md:min-h-screen md:overflow-x-hidden hide-scrollbar">
+          <div
+            className="xs:hidden 
+          md:block py-6 px-4"
+          >
+            <Logo />
+          </div>
           <Maincontent />
         </div>
         <Marquee>
-          <span className="transform rotate-90 whitespace-nowrap tracking-wider flex gap-3 items-center delay-0">
-            Event: Oasis Bus tour, JLN Stadium, Delhi
-            <Image src={astrix} alt="astrix logo" className="h-6 w-6" />
-            Collection Live: Meta Lives
-            <span className="whitespace-nowrap tracking-wider flex gap-3 items-center delay-[30s]">
-              Event: Oasis Bus tour, JLN Stadium, Delhi
-              <Image
-                src={astrix}
-                alt="astrix logo"
-                className="xs:size-3 md:size-4 lg:size-6"
-              />
-              Collection Live: Meta Lives
-            </span>
-          </span>
+          Event: Oasis Bus tour, JLN Stadium, Delhi
+          <Image
+            alt="asterisk"
+            src={astrisk}
+            className="xs:size-5 md:size-6 lg:size-8 mx-2"
+          />
+          Collection Live: Meta Lives
         </Marquee>
 
         <EventDetails data={constants.EVENTDETAILS} />

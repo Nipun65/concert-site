@@ -12,7 +12,7 @@ interface TabsProps {
 const Tabs: React.FC<TabsProps> = ({ data }) => {
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <ul className="flex w-fit rounded-full gap-1 bg-[#282B30] m-3 cursor-pointer">
+    <ul className="flex w-fit rounded-full gap-1 bg-[#282B30] m-6 cursor-pointer xs:ml-auto md:m-6">
       {data?.map((item: TabsData, index: number) => {
         return (
           <li

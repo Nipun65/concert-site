@@ -15,7 +15,7 @@ const Lineup: React.FC<LineupProps> = ({ data }) => {
           return (
             <Image
               src={item}
-              className={`rounded-md xs:size-24 md:size-28 lg:size-36 ${
+              className={`rounded-md xs:size-28 md:size-32 lg:size-36 ${
                 index === 1 ? "lg:scale-110" : ""
               }`}
               alt="lineup"
