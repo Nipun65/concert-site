@@ -27,7 +27,7 @@ export const WaitList = () => {
       className="bg-[#F2BE5C] rounded-full md:tracking-normal lg:tracking-wider
         xl font-bold xs:text-xs md:text-sm lg:text-lg text-black"
     >
-      Join WaitList
+      Join Waitlist
     </Button>
   )
 }
